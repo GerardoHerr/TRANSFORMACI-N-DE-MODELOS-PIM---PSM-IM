@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="com.mycompany.diagramacodigo" epkg="domain" v="6.1.0" rws="_176430269743111" Pws="_176430269743111" cws="_176430269743111" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_176430269742910" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="RolPK" abs="false" class="Rol" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430272488112">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipo" id="_17643036540987">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="isActivo" id="_17643036607618">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_176430442092573">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Rol.findAll">
+            <query>Select e from Rol e</query>
+        </nq>
+        <nq e="false" name="Rol.findByTipo">
+            <query>Select r from Rol r where r.tipo=:tipo</query>
+        </nq>
+        <nq e="false" name="Rol.findByIsActivo">
+            <query>Select r from Rol r where r.isActivo=:isActivo</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="UsuarioPK" abs="false" class="Usuario" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_17643036797479">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" id="_176430368842912">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="correo" id="_176430369258413">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="clave" id="_176430369433314">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_176430272488112" v="true" xvt="" name="rol" id="_176430458663283">
+                <xwm/>
+                <xm/>
+            </many-to-one>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_176430372551815" v="true" xvt="" name="plantacions" id="_176430462012287">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_176430442532674">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Usuario.findAll">
+            <query>Select e from Usuario e</query>
+        </nq>
+        <nq e="false" name="Usuario.findByNombre">
+            <query>Select u from Usuario u where u.nombre=:nombre</query>
+        </nq>
+        <nq e="false" name="Usuario.findByCorreo">
+            <query>Select u from Usuario u where u.correo=:correo</query>
+        </nq>
+        <nq e="false" name="Usuario.findByClave">
+            <query>Select u from Usuario u where u.clave=:clave</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="PlantacionPK" abs="false" class="Plantacion" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430372551815">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" id="_176430390497818">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaRegistro" id="_176430390850819">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="espacio" id="_176430391213020">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_176430393493821" v="true" xvt="" name="cultivo" id="_176430466031489">
+                <xwm/>
+                <xm/>
+            </many-to-one>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_176430420244650" v="true" xvt="" name="sensors" id="_1764304932217105">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_176430430210561" v="true" xvt="" name="alertas" id="_1764304996710109">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_176430424803956" v="true" xvt="" name="configuracionTomaDecision" id="_1764304952498107">
+                <xwm/>
+                <xm/>
+            </one-to-one>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_176430442740575">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Plantacion.findAll">
+            <query>Select e from Plantacion e</query>
+        </nq>
+        <nq e="false" name="Plantacion.findByNombre">
+            <query>Select p from Plantacion p where p.nombre=:nombre</query>
+        </nq>
+        <nq e="false" name="Plantacion.findByFechaRegistro">
+            <query>Select p from Plantacion p where p.fechaRegistro=:fechaRegistro</query>
+        </nq>
+        <nq e="false" name="Plantacion.findByEspacio">
+            <query>Select p from Plantacion p where p.espacio=:espacio</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="CultivoPK" abs="false" class="Cultivo" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430393493821">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombreCultivo" id="_176430394540324">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="tipoCultivo" id="_176430398594925">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="familia" id="_176430398758626">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="semilla" id="_176430398900727">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_176430405109333" v="true" xvt="" name="configuacionUmbrals" id="_176430478635095">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1764305178770119">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Cultivo.findAll">
+            <query>Select e from Cultivo e</query>
+        </nq>
+        <nq e="false" name="Cultivo.findByNombreCultivo">
+            <query>Select c from Cultivo c where c.nombreCultivo=:nombreCultivo</query>
+        </nq>
+        <nq e="false" name="Cultivo.findByTipoCultivo">
+            <query>Select c from Cultivo c where c.tipoCultivo=:tipoCultivo</query>
+        </nq>
+        <nq e="false" name="Cultivo.findByFamilia">
+            <query>Select c from Cultivo c where c.familia=:familia</query>
+        </nq>
+        <nq e="false" name="Cultivo.findBySemilla">
+            <query>Select c from Cultivo c where c.semilla=:semilla</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="AccionPK" abs="false" class="Accion" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430401961528">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipoAccion" id="_176430403240831">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaEjecucion" id="_176430403391832">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1764305197500127">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Accion.findAll">
+            <query>Select e from Accion e</query>
+        </nq>
+        <nq e="false" name="Accion.findByTipoAccion">
+            <query>Select a from Accion a where a.tipoAccion=:tipoAccion</query>
+        </nq>
+        <nq e="false" name="Accion.findByFechaEjecucion">
+            <query>Select a from Accion a where a.fechaEjecucion=:fechaEjecucion</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ConfiguacionUmbralPK" abs="false" class="ConfiguacionUmbral" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430405109333">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="valorMinimo" id="_176430406483236">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="valorMaximo" id="_176430406680837">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaConfiguracion" id="_176430406891238">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_176430409631339" v="true" xvt="" name="variableAmbiental" id="_176430481592797">
+                <xwm/>
+                <xm/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1764305181144120">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="ConfiguacionUmbral.findAll">
+            <query>Select e from ConfiguacionUmbral e</query>
+        </nq>
+        <nq e="false" name="ConfiguacionUmbral.findByValorMinimo">
+            <query>Select c from ConfiguacionUmbral c where c.valorMinimo=:valorMinimo</query>
+        </nq>
+        <nq e="false" name="ConfiguacionUmbral.findByValorMaximo">
+            <query>Select c from ConfiguacionUmbral c where c.valorMaximo=:valorMaximo</query>
+        </nq>
+        <nq e="false" name="ConfiguacionUmbral.findByFechaConfiguracion">
+            <query>Select c from ConfiguacionUmbral c where c.fechaConfiguracion=:fechaConfiguracion</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="VariableAmbientalPK" abs="false" class="VariableAmbiental" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430409631339">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" id="_176430411649042">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="unidad" id="_176430411852243">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1764305184713121">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="VariableAmbiental.findAll">
+            <query>Select e from VariableAmbiental e</query>
+        </nq>
+        <nq e="false" name="VariableAmbiental.findByNombre">
+            <query>Select v from VariableAmbiental v where v.nombre=:nombre</query>
+        </nq>
+        <nq e="false" name="VariableAmbiental.findByUnidad">
+            <query>Select v from VariableAmbiental v where v.unidad=:unidad</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="DatoSensorPK" abs="false" class="DatoSensor" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430413202744">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="valor" id="_176430417378547">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaRegistro" id="_176430417786648">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="hoiraRegistro" id="_176430417965849">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_176430409631339" v="true" xvt="" name="variableAmbiental" id="_176430489213899">
+                <xwm/>
+                <xm/>
+            </one-to-one>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1764305188199122">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="DatoSensor.findAll">
+            <query>Select e from DatoSensor e</query>
+        </nq>
+        <nq e="false" name="DatoSensor.findByValor">
+            <query>Select d from DatoSensor d where d.valor=:valor</query>
+        </nq>
+        <nq e="false" name="DatoSensor.findByFechaRegistro">
+            <query>Select d from DatoSensor d where d.fechaRegistro=:fechaRegistro</query>
+        </nq>
+        <nq e="false" name="DatoSensor.findByHoiraRegistro">
+            <query>Select d from DatoSensor d where d.hoiraRegistro=:hoiraRegistro</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="SensorPK" abs="false" class="Sensor" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430420244650">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipoSensor" id="_176430421393553">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estado" id="_176430421912354">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="ubicacion" id="_176430422262955">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_176430413202744" v="true" xvt="" name="datoSensors" id="_1764304918162103">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1764305190226123">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Sensor.findAll">
+            <query>Select e from Sensor e</query>
+        </nq>
+        <nq e="false" name="Sensor.findByTipoSensor">
+            <query>Select s from Sensor s where s.tipoSensor=:tipoSensor</query>
+        </nq>
+        <nq e="false" name="Sensor.findByEstado">
+            <query>Select s from Sensor s where s.estado=:estado</query>
+        </nq>
+        <nq e="false" name="Sensor.findByUbicacion">
+            <query>Select s from Sensor s where s.ubicacion=:ubicacion</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ConfiguracionTomaDecisionPK" abs="false" class="ConfiguracionTomaDecision" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430424803956">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipoConfiguracion" id="_176430426894159">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="criterioDecision" id="_176430427051860">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1764305191986124">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="ConfiguracionTomaDecision.findAll">
+            <query>Select e from ConfiguracionTomaDecision e</query>
+        </nq>
+        <nq e="false" name="ConfiguracionTomaDecision.findByTipoConfiguracion">
+            <query>Select c from ConfiguracionTomaDecision c where c.tipoConfiguracion=:tipoConfiguracion</query>
+        </nq>
+        <nq e="false" name="ConfiguracionTomaDecision.findByCriterioDecision">
+            <query>Select c from ConfiguracionTomaDecision c where c.criterioDecision=:criterioDecision</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="AlertaPK" abs="false" class="Alerta" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430430210561">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="tipoAlerta" id="_176430431005764">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="descripcion" id="_176430431574565">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaGeneracion" id="_176430431764166">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estado" id="_176430431970567">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_176430401961528" v="true" xvt="" name="accion" id="_1764305045597113">
+                <xwm/>
+                <xm/>
+            </one-to-one>
+            <one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_176430435253268" v="true" xvt="" name="recomenacion" id="_1764305109871118">
+                <xwm/>
+                <xm/>
+            </one-to-one>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1764305195339126">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Alerta.findAll">
+            <query>Select e from Alerta e</query>
+        </nq>
+        <nq e="false" name="Alerta.findByTipoAlerta">
+            <query>Select a from Alerta a where a.tipoAlerta=:tipoAlerta</query>
+        </nq>
+        <nq e="false" name="Alerta.findByDescripcion">
+            <query>Select a from Alerta a where a.descripcion=:descripcion</query>
+        </nq>
+        <nq e="false" name="Alerta.findByFechaGeneracion">
+            <query>Select a from Alerta a where a.fechaGeneracion=:fechaGeneracion</query>
+        </nq>
+        <nq e="false" name="Alerta.findByEstado">
+            <query>Select a from Alerta a where a.estado=:estado</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="RecomenacionPK" abs="false" class="Recomenacion" v="true" jbn="false" xre="false" m="false" rootElement="_176430269742910" id="_176430435253268">
+        <ath>LENOVO</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="descripcion" id="_176430436641171">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="fechaEmision" id="_176430436887972">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_1764305193650125">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Recomenacion.findAll">
+            <query>Select e from Recomenacion e</query>
+        </nq>
+        <nq e="false" name="Recomenacion.findByDescripcion">
+            <query>Select r from Recomenacion r where r.descripcion=:descripcion</query>
+        </nq>
+        <nq e="false" name="Recomenacion.findByFechaEmision">
+            <query>Select r from Recomenacion r where r.fechaEmision=:fechaEmision</query>
+        </nq>
+    </entity>
+    <wsl>
+        <ws n="Main" id="_176430269743111">
+            <i ref="_176430401961528" x="14" y="417"/>
+            <i ref="_176430393493821" x="702" y="39"/>
+            <i ref="_176430409631339" x="830" y="277"/>
+            <i ref="_176430272488112" x="61" y="17"/>
+            <i ref="_17643036797479" x="271" y="13"/>
+            <i ref="_176430435253268" x="232" y="404"/>
+            <i ref="_176430413202744" x="640" y="249"/>
+            <i ref="_176430420244650" x="471" y="249"/>
+            <i ref="_176430372551815" x="471" y="-13"/>
+            <i ref="_176430424803956" x="174" y="218"/>
+            <i ref="_176430430210561" x="25" y="180"/>
+            <i ref="_176430405109333" x="884" y="66"/>
+        </ws>
+    </wsl>
+</entity-mappings>

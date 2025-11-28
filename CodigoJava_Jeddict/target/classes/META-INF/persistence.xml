@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.1" xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+  <persistence-unit name="DEFAULT_PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.mycompany.diagramacodigo.domain.Rol</class>
+    <class>com.mycompany.diagramacodigo.domain.Usuario</class>
+    <class>com.mycompany.diagramacodigo.domain.Plantacion</class>
+    <class>com.mycompany.diagramacodigo.domain.Cultivo</class>
+    <class>com.mycompany.diagramacodigo.domain.Accion</class>
+    <class>com.mycompany.diagramacodigo.domain.ConfiguacionUmbral</class>
+    <class>com.mycompany.diagramacodigo.domain.VariableAmbiental</class>
+    <class>com.mycompany.diagramacodigo.domain.DatoSensor</class>
+    <class>com.mycompany.diagramacodigo.domain.Sensor</class>
+    <class>com.mycompany.diagramacodigo.domain.ConfiguracionTomaDecision</class>
+    <class>com.mycompany.diagramacodigo.domain.Alerta</class>
+    <class>com.mycompany.diagramacodigo.domain.Recomenacion</class>
+    <properties>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
+      <property name="jakarta.persistence.jdbc.password" value="app"/>
+      <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="jakarta.persistence.jdbc.user" value="app"/>
+      <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
